@@ -1,82 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Critical Mobile Error</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SuperShop - Best Deals!</title>
   <style>
     body {
-      background-color: #000;
-      color: #ff0000;
-      font-family: monospace;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
       margin: 0;
       padding: 0;
+    }
+    header {
+      background-color: #ff4500;
+      color: white;
       text-align: center;
-      overflow: hidden;
-    }
-    h1 {
-      font-size: 2em;
-      animation: blink 0.5s infinite;
-      margin-top: 40px;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    p {
-      margin: 20px;
-      font-size: 1.2em;
-    }
-    .trap {
-      background: lime;
-      color: black;
-      padding: 15px;
+      padding: 1.5rem 0;
+      font-size: 2rem;
       font-weight: bold;
-      margin: 40px auto;
+      letter-spacing: 2px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .product {
+      background: white;
       border-radius: 10px;
-      width: 80%;
-      animation: blink 0.8s infinite;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      text-align: center;
+      padding: 1rem;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .product h3 {
+      margin: 0.5rem 0 0.25rem 0;
+      font-size: 1.1rem;
+    }
+    .product p {
+      margin: 0;
+      color: #777;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-<body ontouchstart="troll()">
-  <h1>CRITICAL MOBILE ERROR</h1>
-  <p>Warning: Your device is overheating!</p>
-  <p>Immediate action required.</p>
-  <div class="trap" onclick="rickroll()">TAP TO FIX NOW</div>
+<body>
 
-  <audio id="trollaudio" loop>
-    <source src="https://www.myinstants.com/media/sounds/trollolol.mp3" type="audio/mpeg">
-  </audio>
+<header>SuperShop - Best Deals!</header>
 
-  <script>
-    let triggered = false;
-    function troll() {
-      if (triggered) return;
-      triggered = true;
+<div class="products">
+  <div class="product" onclick="rickroll()">
+    <img src="https://via.placeholder.com/200x150?text=Cool+Gadget" alt="Cool Gadget" />
+    <h3>Cool Gadget</h3>
+    <p>$19.99</p>
+  </div>
+  <div class="product" onclick="rickroll()">
+    <img src="https://via.placeholder.com/200x150?text=Amazing+Widget" alt="Amazing Widget" />
+    <h3>Amazing Widget</h3>
+    <p>$29.99</p>
+  </div>
+  <div class="product" onclick="rickroll()">
+    <img src="https://via.placeholder.com/200x150?text=Funny+Toy" alt="Funny Toy" />
+    <h3>Funny Toy</h3>
+    <p>$9.99</p>
+  </div>
+  <div class="product" onclick="rickroll()">
+    <img src="https://via.placeholder.com/200x150?text=Smart+Device" alt="Smart Device" />
+    <h3>Smart Device</h3>
+    <p>$49.99</p>
+  </div>
+</div>
 
-      // Play audio
-      document.getElementById("trollaudio").play();
+<footer>© 2025 SuperShop. All rights reserved.</footer>
 
-      // Trigger vibrations
-      if (navigator.vibrate) {
-        navigator.vibrate([200, 100, 200, 100, 400]);
-      }
+<script>
+  function rickroll() {
+    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  }
+</script>
 
-      // Repeated alerts
-      setTimeout(() => {
-        alert("Mobile virus detected!");
-      }, 3000);
-
-      // Auto redirect loop
-      setTimeout(() => {
-        location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-      }, 10000);
-    }
-
-    function rickroll() {
-      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
-    }
-  </script>
 </body>
 </html>
