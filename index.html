@@ -3,98 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SuperShop - Best Deals!</title>
+  <title>Exclusive Offer - Limited Time Only!</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
+      background-color: #fff0f0;
+      text-align: center;
+      padding-top: 5rem;
     }
-    header {
-      background-color: #ff4500;
+    h1 {
+      font-size: 2.5rem;
+      color: #c00;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 1.5rem;
       color: white;
-      text-align: center;
-      padding: 1.5rem 0;
-      font-size: 2rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .product {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      text-align: center;
-      padding: 1rem;
-    }
-    .product:hover {
-      transform: scale(1.05);
-    }
-    .product img {
-      max-width: 100%;
+      background-color: #007bff;
+      padding: 1rem 2rem;
+      text-decoration: none;
       border-radius: 10px;
     }
-    .product h3 {
-      margin: 0.5rem 0 0.25rem 0;
-      font-size: 1.1rem;
-    }
-    .product p {
-      margin: 0;
-      color: #777;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    footer {
-      text-align: center;
-      color: #888;
-      padding: 1rem;
-      font-size: 0.9rem;
+    a:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
-<header>SuperShop - Best Deals!</header>
+<h1>WAIT! You've unlocked a secret deal!</h1>
+<p>Click the button below to claim your **free surprise**!</p>
 
-<div class="products">
-  <div class="product" onclick="rickroll()">
-    <img src="https://via.placeholder.com/200x150?text=Cool+Gadget" alt="Cool Gadget" />
-    <h3>Cool Gadget</h3>
-    <p>$19.99</p>
-  </div>
-  <div class="product" onclick="rickroll()">
-    <img src="https://via.placeholder.com/200x150?text=Amazing+Widget" alt="Amazing Widget" />
-    <h3>Amazing Widget</h3>
-    <p>$29.99</p>
-  </div>
-  <div class="product" onclick="rickroll()">
-    <img src="https://via.placeholder.com/200x150?text=Funny+Toy" alt="Funny Toy" />
-    <h3>Funny Toy</h3>
-    <p>$9.99</p>
-  </div>
-  <div class="product" onclick="rickroll()">
-    <img src="https://via.placeholder.com/200x150?text=Smart+Device" alt="Smart Device" />
-    <h3>Smart Device</h3>
-    <p>$49.99</p>
-  </div>
-</div>
-
-<footer>© 2025 SuperShop. All rights reserved.</footer>
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Claim Now</a>
 
 <script>
-  function rickroll() {
-    window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-  }
+  // Prevent back navigation
+  history.pushState(null, document.title, location.href);
+  window.addEventListener('popstate', function () {
+    history.pushState(null, document.title, location.href);
+  });
+
+  // Disable F12, right click, etc.
+  document.addEventListener('keydown', function (e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || (e.ctrlKey && e.key === "U")) {
+      e.preventDefault();
+    }
+  });
+
+  // Annoying confirmation on trying to leave
+  window.onbeforeunload = function () {
+    return "Are you sure you want to leave this amazing deal?";
+  };
 </script>
 
 </body>
