@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Critical Mobile Error</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ff0000;
+      font-family: monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2em;
+      animation: blink 0.5s infinite;
+      margin-top: 40px;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    p {
+      margin: 20px;
+      font-size: 1.2em;
+    }
+    .trap {
+      background: lime;
+      color: black;
+      padding: 15px;
+      font-weight: bold;
+      margin: 40px auto;
+      border-radius: 10px;
+      width: 80%;
+      animation: blink 0.8s infinite;
+    }
+  </style>
+</head>
+<body ontouchstart="troll()">
+  <h1>CRITICAL MOBILE ERROR</h1>
+  <p>Warning: Your device is overheating!</p>
+  <p>Immediate action required.</p>
+  <div class="trap" onclick="rickroll()">TAP TO FIX NOW</div>
+
+  <audio id="trollaudio" loop>
+    <source src="https://www.myinstants.com/media/sounds/trollolol.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    let triggered = false;
+    function troll() {
+      if (triggered) return;
+      triggered = true;
+
+      // Play audio
+      document.getElementById("trollaudio").play();
+
+      // Trigger vibrations
+      if (navigator.vibrate) {
+        navigator.vibrate([200, 100, 200, 100, 400]);
+      }
+
+      // Repeated alerts
+      setTimeout(() => {
+        alert("Mobile virus detected!");
+      }, 3000);
+
+      // Auto redirect loop
+      setTimeout(() => {
+        location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      }, 10000);
+    }
+
+    function rickroll() {
+      window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+    }
+  </script>
+</body>
+</html>
